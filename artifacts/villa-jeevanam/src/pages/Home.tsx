@@ -61,9 +61,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-primary tracking-[0.25em] uppercase text-sm md:text-base font-medium mb-5">
-              Welcome to Luxury
-            </p>
+            <p className="text-primary tracking-[0.25em] uppercase text-sm md:text-base font-medium mb-5">Welcome to Leh</p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground font-bold mb-6 leading-tight text-glow">
               Villa Jeevanam
             </h1>
@@ -92,7 +90,6 @@ export default function Home() {
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary/70 to-transparent" />
         </motion.div>
       </section>
-
       {/* ── ABOUT STRIP ── */}
       <section className="py-16 px-4 bg-secondary/30 border-y border-border/40">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -108,7 +105,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* ── ABOUT TEXT ── */}
       <section className="py-24 md:py-32 px-4 bg-background">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -149,7 +145,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* ── AMENITIES ── */}
       <section className="py-20 px-4 bg-secondary/20 border-y border-border/40 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
@@ -174,7 +169,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── QUICK NAV CARDS ── */}
       <section className="py-24 md:py-32 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
@@ -204,7 +198,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── TESTIMONIAL STRIP ── */}
       <section className="py-16 px-4 bg-secondary/20 border-y border-border/40">
         <div className="max-w-3xl mx-auto text-center">
@@ -228,7 +221,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* ── CTA ── */}
       <section className="py-24 px-4 bg-background text-center">
         <motion.div {...fadeUp(0)} className="max-w-2xl mx-auto">
