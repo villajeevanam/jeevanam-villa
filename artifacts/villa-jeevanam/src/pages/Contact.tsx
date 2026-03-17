@@ -122,16 +122,16 @@ export default function Contact() {
             {
               icon: Phone,
               title: "Call Us",
-              value: "+91 99999 99999",
+              value: "+91 97979 82421",
               sub: "Mon–Sun, 7 AM – 10 PM",
-              href: "tel:+919999999999",
+              href: "tel:+919797982421",
             },
             {
               icon: Mail,
               title: "Email Us",
-              value: "info@villajeevanam.com",
+              value: "villajeevanam@gmail.com",
               sub: "We reply within 24 hours",
-              href: "mailto:info@villajeevanam.com",
+              href: "mailto:villajeevanam@gmail.com",
             },
             {
               icon: MapPin,
@@ -322,7 +322,7 @@ export default function Contact() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/919797982421"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-4 p-5 bg-[#25D366]/10 border border-[#25D366]/25 rounded-xl hover:border-[#25D366]/50 transition-all duration-300"

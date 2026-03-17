@@ -254,7 +254,7 @@ export default function Rooms() {
             <AlertTriangle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
             <p className="text-foreground/70 text-sm leading-relaxed">
               By proceeding with a booking, guests acknowledge and agree to the above cancellation and payment terms.
-              For special circumstances, please contact us at <span className="text-primary">+91 99999 99999</span>.
+              For special circumstances, please contact us at <span className="text-primary">+91 97979 82421</span>.
             </p>
           </motion.div>
         </div>
