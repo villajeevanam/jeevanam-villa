@@ -91,6 +91,23 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/villa-jeevanam` (`@workspace/villa-jeevanam`)
+
+Frontend-only React + Vite hotel website for "Villa Jeevanam" (dark luxury theme). No backend — all data is static.
+
+- **Stack**: React 18, Vite, TypeScript, Tailwind CSS, Framer Motion, react-hook-form + Zod, wouter (routing), lucide-react
+- **Fonts**: Playfair Display (serif/headings), Inter (sans/body)
+- **Theme**: Dark luxury — charcoal background (`hsl(0 0% 6%)`), gold primary (`hsl(39 46% 61%)`)
+- **Multi-page routing** via wouter with `AnimatePresence` page transitions
+- **Pages**: Home (`/`), Rooms (`/rooms`), Gallery (`/gallery`), Reviews (`/reviews`), Contact (`/contact`)
+- **Shared**: `Layout.tsx` wraps every page with `Navbar`, `Footer`, and floating WhatsApp button
+- **Navbar**: Active route highlight via `useLocation`, closes mobile menu on navigation
+- **Rooms page**: Room cards (alternating layout) + Tariff table (EP/CP/MAP/AP plans) + Cancellation Policy
+- **Gallery page**: Masonry-style grid + lightbox with thumbnail strip
+- **Reviews page**: 4.9★ rating summary + animated breakdown bar + 8 review cards
+- **Contact page**: Booking form with live price estimator + Google Maps embed
+- `pnpm --filter @workspace/villa-jeevanam run dev` — starts Vite dev server
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.

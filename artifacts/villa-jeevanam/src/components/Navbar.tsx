@@ -1,28 +1,35 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Rooms", href: "#rooms" },
-  { name: "Amenities", href: "#amenities" },
-  { name: "Tariff", href: "#tariff" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Rooms", href: "/rooms" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Reviews", href: "/reviews" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+
+  const isActive = (href: string) =>
+    href === "/" ? location === "/" : location.startsWith(href);
 
   return (
     <nav
@@ -36,28 +43,36 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#home" className="flex-shrink-0 group">
-            <h1 className="font-serif text-2xl md:text-3xl font-bold text-primary group-hover:text-glow transition-all duration-300">
+          <Link href="/" className="flex-shrink-0 group">
+            <h1 className="font-serif text-2xl md:text-3xl font-bold text-primary group-hover:opacity-80 transition-opacity duration-300">
               Villa Jeevanam
             </h1>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-6">
+            <div className="flex space-x-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                  className={cn(
+                    "px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 relative",
+                    isActive(link.href)
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                  )}
                 >
                   {link.name}
-                </a>
+                  {isActive(link.href) && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-primary rounded-full" />
+                  )}
+                </Link>
               ))}
             </div>
-            <a href="#booking" tabIndex={-1}>
+            <Link href="/contact">
               <Button className="h-10 px-6 text-sm">Book Now</Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,24 +91,30 @@ export function Navbar() {
       {/* Mobile Nav */}
       <div
         className={cn(
-          "md:hidden fixed inset-x-0 top-[100%] bg-card/95 backdrop-blur-xl border-b border-border/50 transition-all duration-300 ease-in-out overflow-hidden shadow-2xl",
-          mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          "md:hidden fixed inset-x-0 top-[100%] bg-card/97 backdrop-blur-xl border-b border-border/50 transition-all duration-300 ease-in-out overflow-hidden shadow-2xl",
+          mobileMenuOpen ? "max-h-[450px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+        <div className="px-4 pt-3 pb-6 space-y-1 flex flex-col">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-3 rounded-md text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 transition-colors"
+              className={cn(
+                "block px-4 py-3 rounded-lg text-base font-medium transition-colors",
+                isActive(link.href)
+                  ? "text-primary bg-primary/10"
+                  : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+              )}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a href="#booking" className="pt-4 block" onClick={() => setMobileMenuOpen(false)}>
-            <Button className="w-full">Book Your Stay</Button>
-          </a>
+          <div className="pt-3">
+            <Link href="/contact">
+              <Button className="w-full">Book Your Stay</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
