@@ -500,7 +500,7 @@ export default function Contact() {
               <div>
                 <p className="text-foreground/80 text-sm font-medium">Jeevanam Villa Leh</p>
                 <p className="text-foreground/50 text-sm">Leh, Ladakh, 194101, India</p>
-                <p className="text-foreground/35 text-xs mt-1">Check-in &amp; Check-out: 08:00 AM</p>
+                <p className="text-foreground/35 text-xs mt-1">Check-in & Check-out: 09:00 AM</p>
               </div>
             </div>
           </motion.div>
