@@ -499,7 +499,7 @@ export default function Contact() {
               <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
               <div>
                 <p className="text-foreground/80 text-sm font-medium">Jeevanam Villa Leh</p>
-                <p className="text-foreground/50 text-sm">Leh, 194101, India</p>
+                <p className="text-foreground/50 text-sm">Leh, Ladakh, 194101, India</p>
                 <p className="text-foreground/35 text-xs mt-1">Check-in &amp; Check-out: 08:00 AM</p>
               </div>
             </div>
