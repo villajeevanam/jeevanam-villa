@@ -45,7 +45,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <h2 className="font-serif text-2xl text-primary font-bold mb-1">Villa Jeevanam</h2>
-          <p className="text-foreground/50 text-sm">A comfortable and premium stay.</p>
+          <p className="text-foreground/50 text-sm">A comfortable and cozy stay.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6 text-sm text-foreground/50">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
