@@ -1,0 +1,13 @@
+packages:
+  "framer-motion": "For elegant page transitions, scroll-triggered animations, and smooth visual effects"
+  "react-hook-form": "For robust booking form state management"
+  "@hookform/resolvers": "For Zod validation integration with the booking form"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes safely"
+  "lucide-react": "For beautiful UI icons"
+
+notes:
+  - This is a frontend-only single-page scrolling website.
+  - All data (rooms, gallery) is currently hardcoded for the presentation layer.
+  - The booking form simulates a submission with a success state and does not make actual backend API calls.
+  - Navigation uses standard anchor tags (#id) for smooth scrolling within the same page.
