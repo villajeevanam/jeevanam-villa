@@ -176,7 +176,6 @@ export default function Contact() {
           </p>
         </motion.div>
       </div>
-
       {/* Contact Cards */}
       <section className="py-4 px-4 bg-background">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -210,7 +209,6 @@ export default function Contact() {
           })}
         </div>
       </section>
-
       {/* Booking Form + Map */}
       <section className="py-16 px-4 bg-background">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
@@ -253,7 +251,7 @@ export default function Contact() {
                 ) : (
 
                   /* FORM STATE */
-                  <motion.form
+                  (<motion.form
                     key="form"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -284,9 +282,7 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-
                     <div className="border-t border-border/40" />
-
                     {/* Section: Room */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
@@ -360,9 +356,7 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-
                     <div className="border-t border-border/40" />
-
                     {/* Section: Dates */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
@@ -382,7 +376,6 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-
                     {/* Live Estimate */}
                     <AnimatePresence>
                       {estimatedTotal !== null && estimatedTotal > 0 && (
@@ -408,13 +401,11 @@ export default function Contact() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-
                     {/* Special Requests */}
                     <div className="space-y-1.5">
                       <label className="text-sm font-medium text-foreground/80">Special Requests <span className="text-foreground/40">(optional)</span></label>
                       <Textarea placeholder="Dietary needs, accessibility requirements, celebration arrangements..." {...register("requests")} className="min-h-[80px]" />
                     </div>
-
                     {/* Submit */}
                     <div className="space-y-3">
                       <Button
@@ -458,7 +449,7 @@ export default function Contact() {
                         </p>
                       </div>
                     </div>
-                  </motion.form>
+                  </motion.form>)
                 )}
               </AnimatePresence>
             </div>
@@ -507,7 +498,7 @@ export default function Contact() {
             <div className="flex items-start gap-3 p-4 bg-card border border-border/50 rounded-xl">
               <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
               <div>
-                <p className="text-foreground/80 text-sm font-medium">Hill Station Road, Valley District</p>
+                <p className="text-foreground/80 text-sm font-medium">Jeevanam Villa Leh</p>
                 <p className="text-foreground/50 text-sm">Kerala – 685565, India</p>
                 <p className="text-foreground/35 text-xs mt-1">Check-in &amp; Check-out: 08:00 AM</p>
               </div>
