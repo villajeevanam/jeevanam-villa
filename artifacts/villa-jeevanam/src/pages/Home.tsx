@@ -87,9 +87,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground font-bold mb-6 leading-tight text-glow">
               Villa Jeevanam
             </h1>
-            <p className="text-lg md:text-xl text-foreground/75 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-              A premium 20-room retreat nestled in the hills of Kerala — where nature meets refined hospitality.
-            </p>
+            <p className="text-lg md:text-xl text-foreground/75 mb-10 max-w-2xl mx-auto font-light leading-relaxed">A premium 20-room retreat nestled in the hills of Ladakh — where nature meets refined hospitality.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button size="lg" className="w-full sm:w-auto text-lg px-10">Book Your Stay</Button>
