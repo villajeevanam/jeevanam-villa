@@ -84,9 +84,7 @@ export default function Home() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="text-primary tracking-[0.25em] uppercase text-sm md:text-base font-medium mb-5">Welcome to Leh</p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground font-bold mb-6 leading-tight text-glow">
-              Villa Jeevanam
-            </h1>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground font-bold mb-6 leading-tight text-glow">Jeevanam Villa</h1>
             <p className="text-lg md:text-xl text-foreground/75 mb-10 max-w-2xl mx-auto font-light leading-relaxed">A premium 20-room retreat nestled in the hills of Ladakh — where nature meets refined hospitality.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
