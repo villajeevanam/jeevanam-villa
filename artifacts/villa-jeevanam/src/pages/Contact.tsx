@@ -71,32 +71,28 @@ function buildWhatsAppUrl(d: FormValues, nights: number): string {
   const plan = d.plan ? PLANS[d.plan] : null;
   const planLabel = plan ? `${plan.label} - ${plan.fullName} (${plan.desc})` : (d.plan || "-");
 
-  const lines: string[] = [
-    "New Booking Request - Villa Jeevanam",
+  const message = [
+    "🏨 New Booking Request - Villa Jeevanam",
     "",
-    `Name: ${d.name || "-"}`,
-    `Phone: ${d.phone || "-"}`,
-    `Email: ${d.email || "-"}`,
+    `👤 Name: ${d.name || "-"}`,
+    `📞 Phone: ${d.phone || "-"}`,
+    `📧 Email: ${d.email || "-"}`,
     "",
-    `Room Type: ${d.roomType || "-"}`,
-    `Plan: ${planLabel}`,
-    `Rooms: ${d.numRooms || "-"}`,
-    `Adults: ${d.adults || "-"}`,
-    `Children (5-12): ${d.children512 || "0"}`,
-    `Children (<5): ${d.childrenBelow5 || "0"}`,
-    `Extra Bed: ${d.extraBed === "yes" ? "Yes" : "No"}`,
+    `🛏️ Room Type: ${d.roomType || "-"}`,
+    `🍽️ Plan: ${planLabel}`,
+    `🏘️ Rooms: ${d.numRooms || "-"}`,
+    `👨‍👩‍👧 Adults: ${d.adults || "-"}`,
+    `🧒 Children (5-12): ${d.children512 || "0"}`,
+    `👶 Children (<5): ${d.childrenBelow5 || "0"}`,
+    `🛌 Extra Bed: ${d.extraBed === "yes" ? "Yes" : "No"}`,
     "",
-    `Check-in: ${fmtDate(d.checkIn)}`,
-    `Check-out: ${fmtDate(d.checkOut)}`,
-    ...(nights > 0 ? [`Duration: ${nights} night${nights > 1 ? "s" : ""}`] : []),
-    ...(d.requests ? ["", `Special Request: ${d.requests}`] : []),
-  ];
+    `📅 Check-in: ${fmtDate(d.checkIn)}`,
+    `📅 Check-out: ${fmtDate(d.checkOut)}`,
+    ...(nights > 0 ? [`🌙 Duration: ${nights} night${nights > 1 ? "s" : ""}`] : []),
+    ...(d.requests ? ["", `📝 Special Request: ${d.requests}`] : []),
+  ].join("\n");
 
-  const encoded = lines
-    .map((line) => encodeURIComponent(line))
-    .join("%0A");
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 function calcEstimate(plan: PlanKey, numRooms: number, extraBed: string, children512: number, nights: number) {
