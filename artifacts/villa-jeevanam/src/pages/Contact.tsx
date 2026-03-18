@@ -67,29 +67,36 @@ function fmtDate(d: string) {
   return new Date(d).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
 }
 
-function buildWhatsAppMessage(d: FormValues, nights: number) {
+function buildWhatsAppUrl(d: FormValues, nights: number): string {
   const plan = d.plan ? PLANS[d.plan] : null;
-  const lines = [
-    "🏨 *New Booking Request – Villa Jeevanam*",
+  const planLabel = plan ? `${plan.label} - ${plan.fullName} (${plan.desc})` : (d.plan || "-");
+
+  const lines: string[] = [
+    "New Booking Request - Villa Jeevanam",
     "",
-    `👤 *Name:* ${d.name}`,
-    `📞 *Phone:* ${d.phone}`,
-    d.email ? `📧 *Email:* ${d.email}` : "",
+    `Name: ${d.name || "-"}`,
+    `Phone: ${d.phone || "-"}`,
+    `Email: ${d.email || "-"}`,
     "",
-    `🛏️ *Room Type:* ${d.roomType || "—"}`,
-    `🍽️ *Meal Plan:* ${plan ? `${plan.label} – ${plan.fullName} (${plan.desc})` : "—"}`,
-    `🔢 *No. of Rooms:* ${d.numRooms || "—"}`,
-    `👥 *Adults:* ${d.adults || "—"}`,
-    `🧒 *Children (5–12 yrs):* ${d.children512 || "0"}`,
-    `👶 *Children (below 5):* ${d.childrenBelow5 || "0"} (complimentary)`,
-    `🛏 *Extra Bed:* ${d.extraBed === "yes" ? "Yes" : "No"}`,
+    `Room Type: ${d.roomType || "-"}`,
+    `Plan: ${planLabel}`,
+    `Rooms: ${d.numRooms || "-"}`,
+    `Adults: ${d.adults || "-"}`,
+    `Children (5-12): ${d.children512 || "0"}`,
+    `Children (<5): ${d.childrenBelow5 || "0"}`,
+    `Extra Bed: ${d.extraBed === "yes" ? "Yes" : "No"}`,
     "",
-    `📅 *Check-in:* ${fmtDate(d.checkIn)}`,
-    `📅 *Check-out:* ${fmtDate(d.checkOut)}`,
-    nights > 0 ? `🌙 *Duration:* ${nights} night${nights > 1 ? "s" : ""}` : "",
-    d.requests ? `\n📝 *Special Requests:* ${d.requests}` : "",
-  ].filter(Boolean).join("\n");
-  return encodeURIComponent(lines);
+    `Check-in: ${fmtDate(d.checkIn)}`,
+    `Check-out: ${fmtDate(d.checkOut)}`,
+    ...(nights > 0 ? [`Duration: ${nights} night${nights > 1 ? "s" : ""}`] : []),
+    ...(d.requests ? ["", `Special Request: ${d.requests}`] : []),
+  ];
+
+  const encoded = lines
+    .map((line) => encodeURIComponent(line))
+    .join("%0A");
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
 }
 
 function calcEstimate(plan: PlanKey, numRooms: number, extraBed: string, children512: number, nights: number) {
@@ -155,12 +162,12 @@ export default function Contact() {
       console.warn("Email delivery failed (non-blocking):", e);
     }
 
-    const msg = buildWhatsAppMessage(data, nights);
+    const waUrl = buildWhatsAppUrl(data, nights);
     setStatus("success");
     reset();
 
     setTimeout(() => {
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+      window.open(waUrl, "_blank");
     }, 1200);
   };
 
@@ -240,9 +247,21 @@ export default function Contact() {
                       <MessageCircle size={16} />
                       Opening WhatsApp...
                     </div>
+
+                    <div className="flex gap-3 mt-2">
+                      <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-secondary/50 border border-border/40">
+                        <Mail size={13} className="text-primary shrink-0" />
+                        <p className="text-foreground/65 text-xs">Email sent to hotel</p>
+                      </div>
+                      <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#25D366]/10 border border-[#25D366]/25">
+                        <MessageCircle size={13} className="text-[#25D366] shrink-0" />
+                        <p className="text-foreground/65 text-xs">WhatsApp opens with details</p>
+                      </div>
+                    </div>
+
                     <button
                       onClick={() => setStatus("idle")}
-                      className="mt-8 text-foreground/40 text-xs hover:text-primary transition-colors underline underline-offset-2"
+                      className="mt-4 text-foreground/40 text-xs hover:text-primary transition-colors underline underline-offset-2"
                     >
                       Submit another booking
                     </button>
@@ -429,18 +448,6 @@ export default function Contact() {
                           </>
                         )}
                       </Button>
-
-                      {/* What happens */}
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="flex items-center gap-2 p-3 rounded-lg bg-secondary/40 border border-border/30">
-                          <Mail size={13} className="text-primary shrink-0" />
-                          <p className="text-foreground/50 text-xs">Email sent to hotel</p>
-                        </div>
-                        <div className="flex items-center gap-2 p-3 rounded-lg bg-[#25D366]/8 border border-[#25D366]/20">
-                          <MessageCircle size={13} className="text-[#25D366] shrink-0" />
-                          <p className="text-foreground/50 text-xs">WhatsApp opens with details</p>
-                        </div>
-                      </div>
 
                       <div className="flex items-start gap-2 p-3 rounded-lg bg-secondary/30">
                         <Info size={13} className="text-primary shrink-0 mt-0.5" />
