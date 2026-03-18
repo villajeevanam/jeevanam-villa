@@ -133,11 +133,8 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 leading-tight">
               A sanctuary designed for comfort &amp; calm
             </h2>
-            <p className="text-foreground/65 leading-relaxed mb-6">
-              Nestled amidst the lush greenery of Kerala's highlands, Villa Jeevanam is more than a hotel — 
-              it's a living, breathing retreat. Our 20 thoughtfully appointed rooms blend rustic charm with 
-              modern comforts, giving you the perfect balance of nature and luxury.
-            </p>
+            <p className="text-foreground/65 leading-relaxed mb-6">We travels, some of us forever to seek others states, others lives, other souls." -ANAIS NIN
+            We heartly welcome you to our villa. If you choose to spend your holidays with us then we promise you that you will have a life time memory.</p>
             <p className="text-foreground/65 leading-relaxed mb-8">The Jeevanam Villa waits for explorers and travellers to experience the mystifying land and the people of Ladakh.
             Located at just 5 minutes away from the Airport and 1.5 km from the Main Leh Market, we welcome you to experience and enjoy the local hospitality and simplicity.</p>
             <Link href="/rooms">
