@@ -69,29 +69,57 @@ function fmtDate(d: string) {
 
 function buildWhatsAppUrl(d: FormValues, nights: number): string {
   const plan = d.plan ? PLANS[d.plan] : null;
-  const planLabel = plan ? `${plan.label} - ${plan.fullName} (${plan.desc})` : (d.plan || "-");
+  const planLabel = plan
+    ? plan.label + " - " + plan.fullName + " (" + plan.desc + ")"
+    : d.plan || "-";
 
-  const message = `🏨 New Booking Request - Villa Jeevanam
+  // All emojis written as Unicode escapes to guarantee clean UTF-8 with no
+  // hidden variation selectors (U+FE0F) or zero-width joiners (U+200D).
+  const E = {
+    hotel:    "\uD83C\uDFE8", // 🏨
+    person:   "\uD83D\uDC64", // 👤
+    phone:    "\uD83D\uDCDE", // 📞
+    email:    "\uD83D\uDCE7", // 📧
+    bed:      "\uD83D\uDECF", // 🛏
+    food:     "\uD83C\uDF7D", // 🍽
+    house:    "\uD83C\uDFD8", // 🏘
+    people:   "\uD83D\uDC65", // 👥
+    child:    "\uD83E\uDDD2", // 🧒
+    baby:     "\uD83D\uDC76", // 👶
+    sleep:    "\uD83D\uDECC", // 🛌
+    calendar: "\uD83D\uDCC5", // 📅
+    moon:     "\uD83C\uDF19", // 🌙
+    memo:     "\uD83D\uDCDD", // 📝
+  };
 
-👤 Name: ${d.name || "-"}
-📞 Phone: ${d.phone || "-"}
-📧 Email: ${d.email || "-"}
+  const lines: string[] = [
+    E.hotel + " New Booking Request - Villa Jeevanam",
+    "",
+    E.person   + " Name: "              + (d.name || "-"),
+    E.phone    + " Phone: "             + (d.phone || "-"),
+    E.email    + " Email: "             + (d.email || "-"),
+    "",
+    E.bed      + " Room Type: "         + (d.roomType || "-"),
+    E.food     + " Plan: "              + planLabel,
+    E.house    + " Rooms: "             + (d.numRooms || "-"),
+    "",
+    E.people   + " Adults: "            + (d.adults || "-"),
+    E.child    + " Children (5-12): "   + (d.children512 || "0"),
+    E.baby     + " Children (<5): "     + (d.childrenBelow5 || "0"),
+    E.sleep    + " Extra Bed: "         + (d.extraBed === "yes" ? "Yes" : "No"),
+    "",
+    E.calendar + " Check-in: "          + fmtDate(d.checkIn),
+    E.calendar + " Check-out: "         + fmtDate(d.checkOut),
+    ...(nights > 0
+      ? [E.moon + " Duration: " + nights + " night" + (nights > 1 ? "s" : "")]
+      : []),
+    "",
+    E.memo     + " Special Request: "   + (d.requests || "-"),
+  ];
 
-🛏️ Room Type: ${d.roomType || "-"}
-🍽️ Plan: ${planLabel}
-🏘️ Rooms: ${d.numRooms || "-"}
+  const message = lines.join("\n");
 
-👨‍👩‍👧 Adults: ${d.adults || "-"}
-🧒 Children (5-12): ${d.children512 || "0"}
-👶 Children (<5): ${d.childrenBelow5 || "0"}
-🛌 Extra Bed: ${d.extraBed === "yes" ? "Yes" : "No"}
-
-📅 Check-in: ${fmtDate(d.checkIn)}
-📅 Check-out: ${fmtDate(d.checkOut)}${nights > 0 ? `\n🌙 Duration: ${nights} night${nights > 1 ? "s" : ""}` : ""}
-
-📝 Special Request: ${d.requests || "-"}`;
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 }
 
 function calcEstimate(plan: PlanKey, numRooms: number, extraBed: string, children512: number, nights: number) {
