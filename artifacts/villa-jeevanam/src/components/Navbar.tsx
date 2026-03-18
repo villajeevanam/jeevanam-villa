@@ -44,9 +44,7 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 group">
-            <h1 className="font-serif text-2xl md:text-3xl font-bold text-primary group-hover:opacity-80 transition-opacity duration-300">
-              Villa Jeevanam
-            </h1>
+            <h1 className="font-serif text-2xl md:text-3xl font-bold text-primary group-hover:opacity-80 transition-opacity duration-300">Jeevanam Villa</h1>
           </Link>
 
           {/* Desktop Nav */}
@@ -87,7 +85,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-
       {/* Mobile Nav */}
       <div
         className={cn(
