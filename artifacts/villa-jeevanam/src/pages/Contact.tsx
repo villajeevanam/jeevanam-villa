@@ -146,7 +146,7 @@ export default function Contact() {
   const onSubmit = async (data: FormValues) => {
     setStatus("submitting");
     try {
-      await fetch("/api/booking", {
+      await fetch("/api/send-booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
