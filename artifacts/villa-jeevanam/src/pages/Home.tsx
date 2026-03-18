@@ -4,6 +4,7 @@ import { Wifi, Car, Wind, Coffee, Users, Shield, Droplets, Utensils, ArrowRight,
 import { Layout } from "@/components/Layout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
+import logoWatermark from "@assets/upscaled_logo_1773827872410.png";
 
 const highlights = [
   { icon: Wifi, title: "High-Speed WiFi" },
@@ -54,6 +55,27 @@ export default function Home() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542314831-c6a420325142?w=1920&q=80')` }}
         />
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/80 via-background/55 to-background/96" />
+
+        {/* Logo watermark — behind text, above gradient */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+          style={{ zIndex: 15 }}
+          animate={{ y: [0, -14, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <img
+            src={logoWatermark}
+            alt=""
+            draggable={false}
+            style={{
+              width: "min(65vw, 580px)",
+              opacity: 0.07,
+              filter: "blur(1.5px) brightness(1.4)",
+              mixBlendMode: "screen",
+              userSelect: "none",
+            }}
+          />
+        </motion.div>
 
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <motion.div
