@@ -140,11 +140,8 @@ export default function Home() {
               it's a living, breathing retreat. Our 20 thoughtfully appointed rooms blend rustic charm with 
               modern comforts, giving you the perfect balance of nature and luxury.
             </p>
-            <p className="text-foreground/65 leading-relaxed mb-8">
-              From sunrise breakfasts on the terrace to candlelit dinners under open skies, every detail is 
-              curated to give you an experience worth remembering. Whether you're here for a honeymoon, 
-              a family holiday, or simply to disconnect — Villa Jeevanam welcomes you.
-            </p>
+            <p className="text-foreground/65 leading-relaxed mb-8">The Jeevanam Villa waits for explorers and travellers to experience the mystifying land and the people of Ladakh.
+            Located at just 5 minutes away from the Airport and 1.5 km from the Main Leh Market, we welcome you to experience and enjoy the local hospitality and simplicity.</p>
             <Link href="/rooms">
               <Button variant="outline" className="group">
                 View Our Rooms
