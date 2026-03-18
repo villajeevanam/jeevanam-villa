@@ -5,9 +5,12 @@ import { Layout } from "@/components/Layout";
 import { cn } from "@/lib/utils";
 
 const galleryItems = [
-  { src: "attached_assets/gallery/upscaled logo.png", label: "Exterior" },
   {
-    src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=85",
+    src: "/gallery/exterior/20250530_172543.jpg",
+    label: "Exterior",
+  },
+  {
+    src: "gallery/rooms/20250530_174349.jpg",
     label: "Deluxe Room",
   },
   {
@@ -15,11 +18,11 @@ const galleryItems = [
     label: "Executive Suite",
   },
   {
-    src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=85",
+    src: "gallery/rooms/20250530_174540.jpg",
     label: "Bathroom",
   },
   {
-    src: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=1200&q=85",
+    src: "/gallery/rooms/20250530_175805.jpg",
     label: "Dining Area",
   },
   {
@@ -31,7 +34,7 @@ const galleryItems = [
     label: "Family Suite",
   },
   {
-    src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=85",
+    src: "/gallery/exterior/20250530_173057.jpg",
     label: "Terrace",
   },
   {
@@ -39,16 +42,16 @@ const galleryItems = [
     label: "Night View",
   },
   {
-    src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&q=85",
+    src: "/gallery/rooms/20250530_175636.jpg",
     label: "Lobby",
   },
   {
-    src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=85",
-    label: "Garden",
+    src: "/gallery/rooms/20250530_175516.jpg",
+    label: "Reception",
   },
   {
-    src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85",
-    label: "Infinity Pool",
+    src: "/gallery/exterior/20250530_174847.jpg",
+    label: "View",
   },
 ];
 
