@@ -64,7 +64,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1542314831-c6a420325142?w=1920&q=80')`,
+            backgroundImage: src: "/gallery/exterior/20250530_172543.jpg",
           }}
         />
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/80 via-background/55 to-background/96" />
@@ -81,9 +81,9 @@ export default function Home() {
             alt=""
             draggable={false}
             style={{
-              width: "min(130vw, 1300px)",
+              width: "min(65vw, 580px)",
               opacity: 0.07,
-              filter: "blur(1.5px) brightness(1.8)",
+              filter: "blur(1.5px) brightness(1.4)",
               mixBlendMode: "screen",
               userSelect: "none",
             }}

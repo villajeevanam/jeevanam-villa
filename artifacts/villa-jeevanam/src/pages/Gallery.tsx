@@ -14,8 +14,8 @@ const galleryItems = [
     label: "Deluxe Room",
   },
   {
-    src: "/gallery/rooms/20250530_173159.jpg",
-    label: "Hallway",
+    src: "https://images.unsplash.com/photo-1582719478250-c89fae46583b?w=1200&q=85",
+    label: "Executive Suite",
   },
   {
     src: "gallery/rooms/20250530_174540.jpg",
