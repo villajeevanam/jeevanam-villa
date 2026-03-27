@@ -20,7 +20,7 @@ const rooms = [
     description:
       "Perfect for solo travelers or couples seeking a cozy, elegant space. Features premium bedding, en-suite bathroom, and beautiful views of the surrounding greenery.",
     image: "/images/interior/20250530_173605.jpg",
-    features: ["Queen Bed", "En-suite Bathroom", "Garden View", '32" Smart TV'],
+    features: ["Queen Bed", "En-suite Bathroom", "Garden View", "Smart TV"],
   },
   {
     id: 2,
