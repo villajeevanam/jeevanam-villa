@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const galleryItems = [
   { src: "/images/exterior/20250530_172546.jpg", label: "Exterior" },
   {
-    src: "/images/interior/20250530_173159.jpg",
-    label: "Outside",
+    src: "/images/interior/20250530_175757.jpg",
+    label: "Dining",
   },
   {
     src: "/images/exterior/20250530_173057.jpg",
