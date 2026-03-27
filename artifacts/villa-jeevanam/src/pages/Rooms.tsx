@@ -16,19 +16,11 @@ const rooms = [
   },
   {
     id: 2,
-    title: "Premium Executive Suite",
+    title: "Deluxe Comfort Room with View",
     description:
-      "Spacious and luxurious, featuring a separate seating area, premium soaking tub, and panoramic hillside views. The perfect choice for a special occasion.",
+      "Enjoy all the elegance of our Deluxe Comfort Room with the added luxury of stunning panoramic hillside views. Wake up to breathtaking scenery from your private vantage point.",
     image: "https://images.unsplash.com/photo-1582719478250-c89fae46583b?w=800&q=80",
-    features: ["King Bed", "Living Area", "Mini Bar", "Soaking Tub", "Valley View"],
-  },
-  {
-    id: 3,
-    title: "Family Haven Suite",
-    description:
-      "Designed for families, this suite features two well-appointed bedrooms, ample common space, and a private balcony overlooking the estate.",
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80",
-    features: ["Two Double Beds", "Private Balcony", "Wardrobe", "Kids Amenities", "Spacious Bath"],
+    features: ["Queen Bed", "En-suite Bathroom", "Panoramic Hill View", "Air Conditioning", "32\" Smart TV"],
   },
 ];
 

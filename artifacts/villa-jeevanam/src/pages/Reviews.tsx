@@ -43,7 +43,7 @@ const reviews: Review[] = [
     date: "December 2024",
     rating: 5,
     stay: "Family Vacation · MAP Plan",
-    text: "We stayed in the Family Haven Suite with our two kids and it was perfect. Spacious, clean, and the kids loved the greenery and fresh air. The management was incredibly helpful with everything. Will be bringing the whole family again!",
+    text: "We stayed in the Deluxe Comfort Room with View and it was perfect. Spacious, clean, and the kids loved the greenery and fresh air. The management was incredibly helpful with everything. Will be bringing the whole family again!",
     initials: "SF",
     color: "bg-emerald-800",
   },

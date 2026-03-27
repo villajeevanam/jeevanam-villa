@@ -69,8 +69,7 @@ const CHILD_NO_BED_RATE: Record<PlanKey, number> = {
 
 const ROOM_TYPES = [
   "Deluxe Comfort Room",
-  "Premium Executive Suite",
-  "Family Haven Suite",
+  "Deluxe Comfort Room with View",
 ];
 
 // ─── SCHEMA ───────────────────────────────────────────────────────────────────
