@@ -101,10 +101,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground font-bold mb-6 leading-tight text-glow">
               Jeevanam Villa
             </h1>
-            <p className="text-lg md:text-xl text-foreground/75 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-              A premium 20-room retreat nestled in the hills of Ladakh — where
-              nature meets refined hospitality.
-            </p>
+            <p className="text-lg md:text-xl text-foreground/75 mb-10 max-w-2xl mx-auto font-light leading-relaxed">A premium villa nestled in the hills of Ladakh — where nature meets refined hospitality.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button size="lg" className="w-full sm:w-auto text-lg px-10">
@@ -191,12 +188,12 @@ export default function Home() {
 
           <motion.div {...fadeUp(0.1)} className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1582719478250-c89fae46583b?w=600&q=80"
+              src="/images/exterior/20250530_172546.jpg"
               alt="Room interior"
               className="rounded-2xl object-cover w-full h-64 md:h-80 shadow-2xl"
             />
             <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
+              src="/images/exterior/20250530_175302.jpg"
               alt="Pool view"
               className="rounded-2xl object-cover w-full h-64 md:h-80 shadow-2xl mt-8"
             />

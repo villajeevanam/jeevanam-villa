@@ -5,50 +5,58 @@ import { Layout } from "@/components/Layout";
 import { cn } from "@/lib/utils";
 
 const galleryItems = [
-  { src: "attached_assets/gallery/upscaled logo.png", label: "Exterior" },
+  { src: "/images/exterior/20250530_172546.jpg", label: "Exterior" },
   {
-    src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=85",
-    label: "Deluxe Room",
+    src: "/images/interior/20250530_173159.jpg",
+    label: "Outside",
   },
   {
-    src: "https://images.unsplash.com/photo-1582719478250-c89fae46583b?w=1200&q=85",
-    label: "Executive Suite",
+    src: "/images/exterior/20250530_173057.jpg",
+    label: "Outside",
   },
   {
-    src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=85",
-    label: "Bathroom",
+    src: "/images/exterior/20250530_174806.jpg",
+    label: "Exterior",
   },
   {
-    src: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=1200&q=85",
-    label: "Dining Area",
+    src: "/images/exterior/20250530_175656.jpg",
+    label: "Exterior",
   },
   {
-    src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=85",
-    label: "Pool View",
+    src: "/images/exterior/20250530_172546.jpg",
+    label: "View",
   },
   {
-    src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=85",
+    src: "/images/interior/20250530_174349.jpg",
     label: "Family Suite",
   },
   {
-    src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=85",
-    label: "Terrace",
+    src: "/images/interior/20250530_173605.jpg",
+    label: "Deluxe",
   },
   {
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=85",
-    label: "Night View",
+    src: "/images/interior/20250530_174540(1).jpg",
+    label: "Bathroom",
   },
   {
-    src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&q=85",
+    src: "/images/interior/20250530_173034.jpg",
     label: "Lobby",
   },
   {
-    src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&q=85",
-    label: "Garden",
+    src: "/images/interior/20250530_175624.jpg",
+    label: "Lobby",
   },
   {
-    src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85",
-    label: "Infinity Pool",
+    src: "/images/interior/20250530_175033.jpg",
+    label: "View",
+  },
+  {
+    src: "/images/interior/20250530_173848.jpg",
+    label: "Bathroom",
+  },
+  {
+    src: "/images/interior/20250530_174540(1).jpg",
+    label: "Reception",
   },
 ];
 
