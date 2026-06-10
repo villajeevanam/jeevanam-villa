@@ -183,7 +183,7 @@ export function Navbar() {
 
             {/* Footer strip */}
             <div className="px-5 py-4 border-t border-border/25 text-center">
-              <p className="text-foreground/30 text-xs">Villa Jeevanam · Kerala, India</p>
+              <p className="text-foreground/30 text-xs">Villa Jeevanam · Leh Ladakh, India</p>
             </div>
           </motion.div>
         )}
