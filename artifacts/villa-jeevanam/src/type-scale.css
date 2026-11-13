@@ -1,0 +1,71 @@
+/* Larger reading sizes across the premium theme while retaining its display type. */
+body{font-size:16px}
+.eyebrow{font-size:11px}
+.nav-links a{font-size:14px}
+.nav-book,.button,.hero-quiet-link{font-size:13px}
+.hero-intro{font-size:17px}
+.hero-caption{font-size:11px}
+.hero-side-note{font-size:10px}
+.intro-coordinate{font-size:10px}
+.intro-bottom p,.rooms-heading>div:nth-child(2)>p,.room-description,.plans-heading>div:nth-child(2) p,.plan-card>p,.policy-card p,.policy-note p,.section-head>div:nth-child(2) p,.explore-card p,.review-copy p,.reviews-cta p,.location-grid p,.booking-reassurance{font-size:14px!important}
+.intro-bottom .text-link,.room-copy .text-link,.explore-link,.gallery-foot .text-link{font-size:13px}
+.room-number,.room-image-caption,.room-kicker,.gallery-label,.gallery-card-meta,.gallery-foot>span,.rates-badge,.room-alias,.room-features span,.tariff-notes,.plans-note{font-size:11px}
+.room-alias{font-size:12px}
+.room-description{font-size:14px}
+.room-features span{font-size:12px}
+.amenity-index,.policy-index,.explore-image>span,.review-person>div>span,.review-rating time,.review-stay,.rating-score>span,.rating-line,.rating-badges strong,.rating-badges span,.contact-details small,.footer-nav span,.footer-bottom,.map-note{font-size:10px}
+.amenity-card h3{font-size:19px}
+.rates-table{font-size:12px}
+.rates-table thead small,.rates-table tbody small{font-size:10px}
+.policy-card h3{font-size:19px}
+.gallery-label{font-size:10px}
+.explore-card h3{font-size:22px}
+.review-person h3{font-size:14px}
+.review-avatar{font-size:13px}
+.rating-line{grid-template-columns:16px 13px 1fr 17px}
+.rating-badges strong,.rating-badges span{font-size:10px}
+.contact-details strong,.whatsapp-contact strong{font-size:13px}
+.whatsapp-contact small,.form-small,.booking-advance p,.booking-success>p,.success-status span{font-size:11px}
+.form-fields label,.requests-label{font-size:11px}
+.form-fields input,.form-fields select{font-size:13px}
+.form-section-title,.estimate-panel>div>span,.estimate-panel small,.requests-label small{font-size:10px}
+.requests-label textarea{font-size:13px}
+.footer-nav a{font-size:12px}
+.weather-place,.weather-condition{font-size:9px}
+
+@media(max-width:950px){
+  .nav-links a{font-size:12px}
+  .nav-book{font-size:11px}
+  .nav-inner{gap:16px}
+}
+@media(max-width:700px){
+  .eyebrow,.hero-eyebrow,.intro-top .eyebrow{font-size:10px}
+  .hero-intro{font-size:15px}
+  .hero-caption{font-size:9px}
+  .hero-side-note{font-size:10px}
+  .intro-coordinate{font-size:9px}
+  .intro-bottom p,.rooms-heading>div:nth-child(2)>p,.room-description,.plans-heading>div:nth-child(2) p,.plan-card>p,.policy-card p,.policy-note p,.section-head>div:nth-child(2) p,.explore-card p,.review-copy p,.reviews-cta p,.location-grid p,.booking-reassurance{font-size:14px!important}
+  .text-link,.intro-bottom .text-link,.room-copy .text-link,.gallery-foot .text-link,.explore-link{font-size:12px}
+  .room-number,.room-image-caption,.room-kicker,.room-alias,.room-features span,.amenity-index,.policy-index,.rates-badge,.tariff-notes,.plans-note,.gallery-card-meta,.gallery-label,.gallery-foot>span,.review-person>div>span,.review-rating time,.review-stay,.rating-score>span,.rating-line,.rating-badges strong,.rating-badges span,.contact-details small,.footer-nav span,.footer-bottom,.map-note{font-size:10px}
+  .room-alias{font-size:11px}
+  .room-features span{font-size:11px}
+  .amenity-card h3,.policy-card h3{font-size:17px}
+  .rates-table{font-size:11px}
+  .rates-table thead small,.rates-table tbody small{font-size:9px}
+  .explore-card h3{font-size:19px}
+  .review-person h3{font-size:13px}
+  .review-avatar{font-size:12px}
+  .contact-details strong,.whatsapp-contact strong{font-size:12px}
+  .whatsapp-contact small,.form-small,.booking-advance p,.booking-success>p,.success-status span{font-size:10px}
+  .form-fields label,.requests-label{font-size:10px}
+  .form-fields input,.form-fields select,.requests-label textarea{font-size:12px}
+  .form-section-title,.estimate-panel>div>span,.estimate-panel small,.requests-label small{font-size:9px}
+  .footer-nav a{font-size:11px}
+}
+@media(max-width:1200px) and (min-width:951px){
+  .nav-inner{grid-template-columns:auto 1fr auto;gap:12px}
+  .nav-links{justify-content:center;gap:clamp(12px,1.6vw,20px)}
+  .nav-links a{font-size:12px}
+  .nav-actions{gap:8px}
+  .nav-book{white-space:nowrap;padding-inline:12px}
+}

@@ -1,8 +1,13 @@
 {
-  "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @workspace/villa-jeevanam run build",
-  "outputDirectory": "dist/public",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/rooms", "destination": "/index.html" },
+    { "source": "/rates", "destination": "/index.html" },
+    { "source": "/experiences", "destination": "/index.html" },
+    { "source": "/reviews", "destination": "/index.html" },
+    { "source": "/location", "destination": "/index.html" },
+    { "source": "/book", "destination": "/index.html" }
   ]
 }
