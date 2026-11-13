@@ -269,14 +269,36 @@ export default function App() {
   const [routeLocation, setRouteLocation] = useState(() => `${window.location.pathname}${window.location.search}${window.location.hash}`);
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   const page = {
-    '/': { title: 'Welcome', content: <><Hero /><Intro /><Explore /></> },
-    '/rooms': { title: 'Rooms', content: <><Stay /><Amenities /></> },
-    '/rates': { title: 'Rates & policies', content: <><MealPlans /><Cancellation /></> },
-    '/experiences': { title: 'Experiences', content: <><LocalLife /><Gallery /></> },
-    '/reviews': { title: 'Guest reviews', content: <Reviews /> },
-    '/location': { title: 'Location', content: <><Details /><Location /></> },
-    '/book': { title: 'Reservations', content: <Booking /> },
+    '/': { title: 'Jeevanam Villa | Boutique Hotel in Leh, Ladakh', description: 'Stay at Jeevanam Villa, a boutique hotel in Leh, Ladakh. Explore comfortable rooms, local hospitality, meal plans and direct booking near Leh Airport.', content: <><Hero /><Intro /><Explore /></> },
+    '/rooms': { title: 'Rooms | Jeevanam Villa, Leh', description: 'Compare the Deluxe Comfort Room and Deluxe Plus Comfort Room at Jeevanam Villa in Leh, Ladakh, with room features and hillside views.', content: <><Stay /><Amenities /></> },
+    '/rates': { title: 'Room Rates & Meal Plans | Jeevanam Villa, Leh', description: 'See Jeevanam Villa room rates, meal plans and booking policies for your stay in Leh, Ladakh.', content: <><MealPlans /><Cancellation /></> },
+    '/experiences': { title: 'Villa Gallery & Experiences | Jeevanam Villa, Leh', description: 'Explore the villa, dining spaces, rooms and views around Jeevanam Villa in Leh, Ladakh.', content: <><LocalLife /><Gallery /></> },
+    '/reviews': { title: 'Guest Reviews | Jeevanam Villa, Leh', description: 'Read guest feedback about stays, service, cleanliness and dining at Jeevanam Villa in Leh, Ladakh.', content: <Reviews /> },
+    '/location': { title: 'Location & Directions | Jeevanam Villa, Leh', description: 'Find Jeevanam Villa on GH Road in Skara Yokma, Leh, Ladakh, near Leh Airport and the main Leh Market.', content: <><Details /><Location /></> },
+    '/book': { title: 'Book Your Stay | Jeevanam Villa, Leh', description: 'Request a room at Jeevanam Villa in Leh, Ladakh. Choose your dates, room and meal plan, then contact our reservations team directly.', content: <Booking /> },
   }[path];
+  useEffect(() => {
+    if (!page) return;
+    const canonicalUrl = `https://villajeevanam.com${path === '/' ? '/' : path}`;
+    document.title = page.title;
+    const setMeta = (selector, attribute, value) => {
+      const element = document.head.querySelector(selector);
+      if (element) element.setAttribute(attribute, value);
+    };
+    setMeta('meta[name="description"]', 'content', page.description);
+    setMeta('meta[property="og:title"]', 'content', page.title);
+    setMeta('meta[property="og:description"]', 'content', page.description);
+    setMeta('meta[property="og:url"]', 'content', canonicalUrl);
+    setMeta('meta[name="twitter:title"]', 'content', page.title);
+    setMeta('meta[name="twitter:description"]', 'content', page.description);
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
+  }, [path]);
   useEffect(() => {
     const routedPaths = new Set(['/', '/rooms', '/rates', '/experiences', '/reviews', '/location', '/book']);
     const onDocumentClick = (event) => {
